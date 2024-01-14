@@ -9,7 +9,8 @@ from routers.xss import router
 from constants.general import General
 
 # Define generated images path
-generated_images_path = Path(__file__).parent / "generated_images"
+images_folder = "workspace/generated_images" if General.DIGITAL_OCEN.value else "generated_images" 
+generated_images_path = Path(__file__).parent / images_folder
 
 origins = [
     'http://127.0.0.1:3000', 'http://localhost:3000', 'https://xssvis.netlify.app'
