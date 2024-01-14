@@ -2,12 +2,13 @@ from fastapi import APIRouter, status
 
 # Local
 from schemes.request import XssRequestModel
+from schemes.response import XssResponseModel
 from controllers.detection_controller import xss_detection_controller
 
 router = APIRouter(prefix='/main')
 
 
-@router.get('/', status_code=status.HTTP_200_OK)
+@router.get('/', status_code=status.HTTP_200_OK, response_model=XssResponseModel)
 def detect_xss(http: XssRequestModel):
-    image_name = xss_detection_controller(http)
-    return image_name
+    response = xss_detection_controller(http)
+    return response

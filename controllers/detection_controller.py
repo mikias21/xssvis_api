@@ -25,6 +25,5 @@ def xss_detection_controller(http_req: XssRequestModel):
     # predict
     payload = payload.reshape(-1, 32, 32, 3)
     classification = classify(payload)
-    print(classification)
 
-    return image_name
+    return {"generated_image": image_name, "prediction": classification}
