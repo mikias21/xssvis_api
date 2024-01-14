@@ -8,7 +8,7 @@ from controllers.detection_controller import xss_detection_controller
 router = APIRouter(prefix='/main')
 
 
-@router.get('/', status_code=status.HTTP_200_OK, response_model=XssResponseModel)
+@router.post('/', status_code=status.HTTP_200_OK, response_model=XssResponseModel)
 def detect_xss(http: XssRequestModel):
     response = xss_detection_controller(http)
     return response
