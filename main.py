@@ -12,7 +12,7 @@ from constants.general import General
 generated_images_path = Path(__file__).parent / "generated_images"
 
 origins = [
-    'http://127.0.0.1:3000', 'http://localhost:3000', 'https://xssvis.netlify.app/'
+    'http://127.0.0.1:3000', 'http://localhost:3000', 'https://xssvis.netlify.app'
 ]
 
 app = FastAPI()
